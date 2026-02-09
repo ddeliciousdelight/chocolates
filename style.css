@@ -1,0 +1,1061 @@
+/* Reset & general styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #fffdf8;
+    color: #4a3f35;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: #fff8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+	min-height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+
+.logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+.about-box {
+    display: flex;
+    justify-content: center; /* center the box */
+    padding: 40px 20px;
+    background-color: #fff7f0; /* soft background color */
+}
+
+.about-container {
+    max-width: 900px;
+    border: 3px solid #c97c5d; /* border to match CRT style */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+    text-align: center;
+    font-weight: normal;
+    color: #4a3f35; 
+}
+
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #4a3f35;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #c97c5d;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: #f6e6d8;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    background: #c97c5d;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #ac5f43;
+}
+
+section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* About Section */
+.about h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+	font-family: times new roman;
+}
+
+/* Team Section */
+.team-box {
+    border: 2px solid #c97c5d;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #fff7f0;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 0 0 250px;
+    text-align: center;
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #c97c5d;
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.team-member p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Product Grid */
+/* FLIP CARD EFFECT */
+/* Container for products */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 4 cards per row */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-box {
+  width: 100%;
+  display: inline-block;
+}
+
+.flip-card {
+  width: 100%;
+  height: 350px;   /* card height */
+  perspective: 1000px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #c97c5d;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  backface-visibility: hidden;
+  font-size: 17px;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  background: #fff7f0;
+}
+.flip-back img {
+    width: 100%;          /* fill the card width */
+    height: 300px;        /* fixed height, adjust as needed */
+    object-fit: cover;    /* crops to fit without stretching */
+    border-radius: 10px;  /* optional: match card radius */
+    margin-bottom: 10px;  /* optional spacing from text */
+}
+.flip-front h3 {
+    margin-bottom: 10px;  /* space below product name */
+}
+
+.flip-front p {
+    margin: 5px 0;        /* space between prices/details */
+}
+
+/* Optional: add padding inside front card */
+.flip-front {
+    padding: 15px;        /* ensures content doesn’t touch edges */
+    text-align: center;   /* center align text */
+}
+
+.special-products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 per row */
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.special-box {
+  width: 100%;
+}
+
+.special-products .flip-card {
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.special-products .flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.special-products .flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.special-products .flip-front,
+.special-products .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #c97c5d;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  backface-visibility: hidden;
+}
+
+.special-products .flip-back {
+  transform: rotateY(180deg);
+  background: #fff7f0;
+}
+
+.special-products img {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+.flip-back img {
+    width: 100%;          /* fill the card width */
+    height: 290px;        /* fixed height, adjust as needed */
+    object-fit: cover;    /* crops to fit without stretching */
+    border-radius: 10px;  /* optional: match card radius */
+    margin-bottom: 10px;  /* optional spacing from text */
+}
+.flip-front h3 {
+    margin-bottom: 10px;  /* space below product name */
+}
+
+.flip-front p {
+    margin: 5px 0;        /* space between prices/details */
+}
+
+/* Optional: add padding inside front card */
+.flip-front {
+    padding: 15px;        /* ensures content doesn’t touch edges */
+    text-align: center;   /* center align text */
+}
+
+
+/* Custom Gift Boxes Section */
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.service-box {
+  width: 260px;
+  height: 280px;
+  perspective: 1000px;
+}
+
+.service-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.service-box:hover .service-inner {
+  transform: rotateY(180deg);
+}
+
+.service-front, .service-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.service-back {
+  transform: rotateY(180deg);
+  background: #f7f7f7;
+}
+
+.service-back img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Customizations Card Style */
+.service-box {
+  width: 260px;
+  height: 280px;
+  perspective: 1000px;
+  border: 2px solid #B07A4A;     /* Brown border */
+  background: #fff6e9;           /* Cream background */
+  border-radius: 14px;
+  transition: all 0.4s ease;
+}
+
+.service-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.service-box:hover .service-inner {
+  transform: rotateY(180deg);
+}
+
+/* Inner card surfaces */
+.service-front, .service-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  background: #fff6e9;           /* Cream background inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.service-back {
+  transform: rotateY(180deg);
+}
+
+/* Image on back */
+.service-back img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Hover Glow */
+.service-box:hover {
+  box-shadow: 0 0 15px rgba(90, 62, 43, 0.6),
+              0 0 20px rgba(90, 62, 43, 0.4);
+  border-color: #B07A4A;
+  transform: scale(1.05);
+}
+
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 70%;
+  border-radius: 12px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Carousel container */
+/* Carousel container (optional, for layout) */
+
+
+/* Melting chocolate background */
+/* SECTION BG */
+/* SECTION WRAPPER WITH MELTING BACKGROUND */
+/* SECTION WRAPPER WITH STATIC MELTING BACKGROUND */
+/* MAIN SECTION WITH BACKGROUND */
+.customization-section {
+    position: relative;
+    padding: 60px;
+    border-radius: 20px;
+    background: url('Images/Melt.png') center/cover no-repeat;
+    overflow: hidden;
+}
+
+/* FLEX CONTAINER FOR LEFT & RIGHT */
+.custom-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* responsive */
+}
+
+/* LEFT SIDE: Zig-Zag Boxes */
+.custom-left {
+    flex: 1 1 55%; /* occupies left side */
+}
+
+/* RIGHT SIDE: Customer Reviews */
+.custom-right {
+    flex: 1 1 40%; /* occupies right side */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* REVIEW BOX */
+.review-box {
+    background: rgba(255,255,255,0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-style: italic;
+    color: #4a2e19;
+}
+
+/* SECTION TITLE */
+
+
+/* CUSTOM ITEMS: zig-zag inside single box */
+.custom-items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* EACH BOX */
+.custom-box {
+    width: 90%;
+    background: #d8b892;
+    border-radius: 18px;              
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 2px solid #b78a63;
+
+    /* Fade + slide animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: softAppear 1.2s ease-out forwards;
+}
+
+/* Stagger animations */
+.custom-box:nth-child(1) { animation-delay: 0.1s; }
+.custom-box:nth-child(2) { animation-delay: 0.3s; }
+.custom-box:nth-child(3) { animation-delay: 0.5s; }
+.custom-box:nth-child(4) { animation-delay: 0.7s; }
+.custom-box:nth-child(5) { animation-delay: 0.9s; }
+.custom-box:nth-child(6) { animation-delay: 1.1s; }
+
+@keyframes softAppear {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Zig-Zag Positioning INSIDE LEFT BOX */
+.zig-left {
+    margin-left: 0;
+}
+
+.zig-right {
+    margin-left: auto;
+}
+
+/* TEXT STYLING */
+.custom-text h3 {
+    font-size: 24px;
+    color: #4a2e19;   
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.custom-text p {
+    font-size: 16px;
+    color: #5d3c24;   
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 992px) {
+    .custom-container {
+        flex-direction: column;
+    }
+    .custom-left, .custom-right {
+        flex: 1 1 100%;
+    }
+}
+/* Headings outside the section */
+.section-heading-left {
+    text-align: left;          /* or center if you want */
+    font-size: 36px;
+    color: #f8e7d4;           /* light cream for visibility */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section-heading-right {
+    text-align: right;         /* or center if you want */
+    font-size: 36px;
+    color: #fdddc5;           /* soft peach */
+    
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Remove .title3d from inside section now */
+/* Flex container for headings */
+.section-headings {
+    display: flex;
+    justify-content: space-between; /* left & right headings on edges */
+    align-items: center;
+    margin-bottom: 30px;
+	padding: 0 120px;
+}
+
+/* Heading colors */
+.heading-left {
+    color: #f8e7d4; /* light cream */
+}
+
+.heading-right {
+    color: #fdddc5; /* soft pastel peach */
+}
+
+/* Same style as title3d */
+.title3d {
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 2px 2px 0 #d5b49f;
+}
+
+
+
+
+/* Contact Form */
+/* Contact Section Background */
+/* Contact Section Background */
+/* Contact Section Background */
+.contact-section {
+    position: relative; 
+    padding: 100px 20px 80px 20px; /* spacing */
+    border-radius: 0;              /* square edges */
+    background: url('Images/Contactus.png') center/cover no-repeat; 
+    overflow: hidden;
+}
+
+/* Light Overlay for readability */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 248, 240, 0.5); /* light overlay */
+    border-radius: 0;                        /* square overlay */
+    z-index: 0;
+}
+
+/* Section Headings */
+.contact-heading {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+    color: #5c3518; /* light brown / chocolate color */
+    font-size: 36px;
+}
+
+.contact-sub {
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+    font-size: 18px;
+    color: #5c3518; /* lighter cocoa shade */
+}
+
+/* Contact Box */
+.contact-box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.9); 
+    border: 2px solid #4E2A18;         /* brownie border */
+    padding: 30px;
+    border-radius: 0;                   /* square edges */
+    max-width: 500px;
+    margin: 40px auto 0 auto;          /* spacing from top */
+    color: #4b2e2e;                    /* dark text */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+}
+
+.contact-box a {
+    color: #7a3c3c; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f1f1f1;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.insta-icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.file-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #888;
+}
+.footer-icon {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.gallery-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f7e9dd;
+}
+
+.gallery-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #3b2618;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.title3d {
+  font-size: 48px;
+  font-weight: bold;
+  color: #3b2618;
+  text-shadow: 2px 2px 0 #d5b59c,
+               4px 4px 0 #a07b5b;
+}
+
+.brand-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  color: #3b2f2f;
+  transition: color 0.3s ease;
+}
+
+.brand-title:hover {
+  color: #c47b52; /* chocolate tone highlight */
+}
+
+/* POPUP BOX */
+.brand-popup {
+  display: none;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #ffffff;
+  color: #333;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 2px solid #c47b52; /* visible outline */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  width: 350px;
+  font-size: 14px;
+  font-family: 'Alex Brush', cursive;
+  line-height: 1.6;
+  z-index: 200;
+  transition: all 0.3s ease;
+}
+
+/* Show popup on hover and animate */
+.brand-container:hover .brand-popup {
+  display: block;
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+/* Styling inside popup */
+.brand-popup a {
+  text-decoration: none;
+  color: #3b2f2f;
+  font-weight: 600;
+}
+
+.brand-popup a:hover {
+  color: #c47b52;
+  text-decoration: underline;
+}
+
+/* Navigation Bar Styling */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;          /* makes items horizontal */
+    gap: 25px;              /* spacing between each menu item */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;              /* space between icon and text */
+    font-size: 18px;
+    text-decoration: none;
+    color: #4a3f35;
+    white-space: nowrap;   /* prevents wrapping */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #c97c5d;
+}
+
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    z-index: 9999 !important;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* About Us section */
+
+/* Background wrapper - always visible */
+/* CSS */
+
+/* Background wrapper - full width & image always visible */
+.about-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('Images/Splash.png'); /* your background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 10%; /* keep content on left side */
+}
+
+/* About Us content - hidden initially */
+.about-content {
+    max-width: 500px; /* content box width */
+    background: rgba(0,0,0,0.6); /* semi-transparent dark overlay */
+    padding: 40px;
+    border-radius: 15px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+    position: relative;
+}
+
+/* Show class when scrolling */
+.about-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Arrow */
+.about-arrow {
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    background: #000;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 55px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-arrow:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Team Section - hidden initially */
+.team-wrapper {
+    display: none;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 50px;
+    background: #f8f8f8;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+#team-section {
+    background-color: #fdf0e6; /* light, elegant background */
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+	 border: 2px solid #8B4513; /* brown border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#team-section .title3d {
+    color: #8B4513; /* brown title for elegance */
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+#team-section h3 {
+    color: #5C3317; /* darker brown for name */
+    margin-bottom: 15px;
+}
+
+#team-section p {
+    color: #6B4C3B; /* medium brown for description */
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+section:not(#contact) {
+    scroll-margin-top: 100px; /* adjust if needed */
+}
+#about {
+    scroll-margin-top: 200px; /* increase until it sits perfect */
+}
+.contact-heading {
+    margin-bottom: 0;        /* Remove space below H2 */
+    padding-bottom: 0;
+}
+
+.contact-sub {
+    margin-top: 0;           /* Remove gap above H3 */
+    padding-top: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    /* Header */
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Products grid */
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Special products */
+    .special-products-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Custom section */
+    .custom-container {
+        flex-direction: column;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
+
+
+/* Extra Small Phones */
+
+@media (max-width: 480px) {
+
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+}
+

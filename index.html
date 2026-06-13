@@ -87,7 +87,17 @@
             <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="#about-us"><i class="fas fa-info-circle"></i> About</a></li>
             <li><a href="#gallery"><i class="fas fa-image"></i> Gallery</a></li>
-            <li><a href="#products"><i class="fas fa-shopping-cart"></i> Products</a></li>
+            <li class="dropdown">
+    <a href="#">
+        <i class="fas fa-shopping-cart"></i> Products
+        <i class="fas fa-caret-down"></i>
+    </a>
+
+    <ul class="dropdown-menu">
+        <li><a href="#chocolates">Chocolates</a></li>
+        <li><a href="#brownies">Brownies</a></li>
+    </ul>
+</li>
             <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
 		<div class="search-container">
@@ -96,6 +106,9 @@
     <i class="fas fa-search"></i>
 </button>
     </div>
+	<p id="noResultsMessage" style="display:none;">
+    ❌ No products found.
+</p>
     </nav>
 </header>
 
@@ -111,9 +124,10 @@
     <button onclick="scrollToSection('products')">Explore Chocolates</button>
 </section>
 
-<section id="products" class="products">
+<section id="products">
   <h2 class="title3d">Our Products</h2>
-
+ <div id="chocolates" class="product-category">
+        <h3 class="category-title">Chocolates</h3>
   <div class="products-container">
 
     <!-- Product 1 -->
@@ -461,8 +475,100 @@
       </div>
     </div>
 
-
+</div>
   </div> <!-- END products-container -->
+  
+  <div id="brownies" class="product-category">
+        <h3 class="category-title">Brownies</h3>
+		<div class="brownie-group">
+<h4 class="brownie-subtitle">Classic Brownie</h4>
+
+<div class="brownie-options">
+
+    <div class="brownie-card">
+        <img src="Images/Classic box.jpeg" alt="Classic Brownie">
+        <h3>Classic Brownie - Box Pack</h3>
+        <p>₹99</p>
+    </div>
+
+    <div class="brownie-card">
+        <img src="Images/Classic Jar.jpeg" alt="Classic Brownie Jar">
+        <h3>Classic Brownie - Jar Pack</h3>
+        <p>₹129</p>
+    </div>
+</div>
+</div>
+<h4 class="brownie-subtitle">Walnut Brownie</h4>
+<div class="brownie-group">
+<div class="brownie-options">
+
+    <div class="brownie-card">
+        <img src="Images/Walnut box.jpeg" alt="Walnut Brownie">
+        <h3>Walnut brownie - Box Pack</h3>
+		
+        <p>₹99</p>
+    </div>
+
+    <div class="brownie-card">
+        <img src="Images/Walnut jar.jpeg" alt="Walnut Brownie Jar">
+        <h3>Walnut brownie - Jar Pack</h3>
+        <p>₹129</p>
+    </div>
+</div>
+</div>
+<h4 class="brownie-subtitle">Oreo Brownie</h4>
+<div class="brownie-group">
+<div class="brownie-options">
+
+    <div class="brownie-card">
+        <img src="Images/Oreo box.jpeg" alt="Oreo Brownie">
+        <h3>Oreo brownie - Box Pack</h3>
+        <p>₹99</p>
+    </div>
+
+    <div class="brownie-card">
+        <img src="Images/Oreo jar.jpeg" alt="Oreo Brownie Jar">
+        <h3>Oreo brownie - Jar Pack</h3>
+        <p>₹129</p>
+    </div>
+</div>
+</div>
+<h4 class="brownie-subtitle">Dryfurit Brownie</h4>
+<div class="brownie-group">
+<div class="brownie-options">
+
+    <div class="brownie-card">
+        <img src="Images/Dryfurit box.jpg" alt="Dryfurit Brownie">
+        <h3>Dryfurit brownie - Box Pack</h3>
+        <p>₹99</p>
+    </div>
+
+    <div class="brownie-card">
+        <img src="Images/Dryfurit jar.jpg" alt="Dryfurit Brownie Jar">
+        <h3>Dryfurit brownie - Jar Pack</h3>
+        <p>₹129</p>
+    </div>
+</div>
+</div>
+<h4 class="brownie-subtitle">Nutella Brownie</h4>
+<div class="brownie-group">
+<div class="brownie-options">
+
+    <div class="brownie-card">
+        <img src="Images/Nutella box.jpg" alt="Nutella Brownie">
+        <h3>Nutella brownie - Box Pack</h3>
+        <p>₹99</p>
+    </div>
+
+    <div class="brownie-card">
+        <img src="Images/Nutella jar.jpg" alt="Nutella Brownie Jar">
+        <h3>Nutella brownie - Jar Pack</h3>
+        <p>₹129</p>
+    </div>
+</div>
+</div>
+    </div>
+  
 </section>
 
 

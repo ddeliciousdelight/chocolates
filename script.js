@@ -128,30 +128,86 @@ document.querySelector('#about-arrow').addEventListener("click", function(e) {
 
 // Product Search
 function searchData() {
-    let input = document.getElementById("searchInput").value.toLowerCase().trim();
 
-    let products = document.querySelectorAll(".product-box");
+    let input = document.getElementById("searchInput")
+        .value.toLowerCase()
+        .trim();
 
-    products.forEach(product => {
-        let text = product.innerText.toLowerCase();
+    let items = document.querySelectorAll(
+        ".product-box, .brownie-card"
+    );
+
+    items.forEach(item => {
+
+        let text = item.innerText.toLowerCase();
 
         if (input === "" || text.includes(input)) {
-            product.style.display = "block";
+            item.style.display = "";
         } else {
-            product.style.display = "none";
+            item.style.display = "none";
         }
-    });
-}
 
+    });
+
+}
 document.getElementById("searchInput").addEventListener("input", function () {
+
     if (this.value.trim() === "") {
         searchData();
     }
+
 });
 
 document.getElementById("searchInput").addEventListener("keydown", function(event) {
+
     if (event.key === "Enter") {
         event.preventDefault();
         searchData();
     }
+
 });
+document.querySelectorAll(".brownie-group").forEach(group => {
+
+    let text = group.innerText.toLowerCase();
+
+    if (input === "" || text.includes(input)) {
+        group.style.display = "";
+    } else {
+        group.style.display = "none";
+    }
+
+});
+
+function searchData() {
+
+    let input = document.getElementById("searchInput")
+        .value.toLowerCase()
+        .trim();
+
+    let items = document.querySelectorAll(
+        ".product-box, .brownie-card"
+    );
+
+    let found = false;
+
+    items.forEach(item => {
+
+        let text = item.innerText.toLowerCase();
+
+        if (input === "" || text.includes(input)) {
+            item.style.display = "";
+            found = true;
+        } else {
+            item.style.display = "none";
+        }
+
+    });
+
+    let noResults = document.getElementById("noResultsMessage");
+
+    if (!found && input !== "") {
+        noResults.style.display = "block";
+    } else {
+        noResults.style.display = "none";
+    }
+}

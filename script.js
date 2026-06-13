@@ -125,3 +125,33 @@ document.querySelector('#about-arrow').addEventListener("click", function(e) {
     e.preventDefault();
     scrollToSection("#meet-our-founder", 130); 
 });
+
+// Product Search
+function searchData() {
+    let input = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    let products = document.querySelectorAll(".product-box");
+
+    products.forEach(product => {
+        let text = product.innerText.toLowerCase();
+
+        if (input === "" || text.includes(input)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
+document.getElementById("searchInput").addEventListener("input", function () {
+    if (this.value.trim() === "") {
+        searchData();
+    }
+});
+
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchData();
+    }
+});

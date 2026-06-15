@@ -211,3 +211,52 @@ function searchData() {
         noResults.style.display = "none";
     }
 }
+function searchData() {
+
+    let input = document.getElementById("searchInput")
+        .value.toLowerCase()
+        .trim();
+
+    let items = document.querySelectorAll(
+        ".product-box, .brownie-card"
+    );
+
+    let found = false;
+    let firstMatch = null;
+
+    items.forEach(item => {
+
+        let text = item.innerText.toLowerCase();
+
+        if (input === "" || text.includes(input)) {
+
+            item.style.display = "";
+
+            if (!firstMatch && input !== "") {
+                firstMatch = item;
+            }
+
+            found = true;
+
+        } else {
+            item.style.display = "none";
+        }
+    });
+
+    let noResults = document.getElementById("noResultsMessage");
+
+    if (!found && input !== "") {
+        noResults.style.display = "block";
+    } else {
+        noResults.style.display = "none";
+    }
+
+    if (firstMatch) {
+        setTimeout(() => {
+            firstMatch.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }, 100);
+    }
+}

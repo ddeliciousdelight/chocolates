@@ -92,7 +92,7 @@ document.getElementById('about-arrow').addEventListener('click', () => {
 document.querySelector('a[href="#about-us"]').addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector('#about-us');
-    const offset = 130;  // adjust only this number if needed
+    const offset = 100;  // adjust only this number if needed
 
     const topPos = target.getBoundingClientRect().top + window.pageYOffset - offset;
 
@@ -166,17 +166,7 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
     }
 
 });
-document.querySelectorAll(".brownie-group").forEach(group => {
 
-    let text = group.innerText.toLowerCase();
-
-    if (input === "" || text.includes(input)) {
-        group.style.display = "";
-    } else {
-        group.style.display = "none";
-    }
-
-});
 
 function searchData() {
 
@@ -212,12 +202,28 @@ function searchData() {
     }
 }
 
-//search input naviagting to the screen 
 function searchData() {
 
     let input = document.getElementById("searchInput")
         .value.toLowerCase()
         .trim();
+
+   let warning = document.getElementById("searchWarning");
+
+if (input === "") {
+
+    warning.style.display = "none";
+
+    document.getElementById("noResultsMessage").style.display = "none";
+
+    document.querySelectorAll(
+        ".product-box, .brownie-card, .special-box"
+    ).forEach(item => {
+        item.style.display = "";
+    });
+
+    return;
+}
 
     let items = document.querySelectorAll(
         ".product-box, .brownie-card, .special-box"
@@ -230,11 +236,11 @@ function searchData() {
 
         let text = item.innerText.toLowerCase();
 
-        if (input === "" || text.includes(input)) {
+        if (text.includes(input)) {
 
             item.style.display = "";
 
-            if (!firstMatch && input !== "") {
+            if (!firstMatch) {
                 firstMatch = item;
             }
 
@@ -247,7 +253,7 @@ function searchData() {
 
     let noResults = document.getElementById("noResultsMessage");
 
-    if (!found && input !== "") {
+    if (!found) {
         noResults.style.display = "block";
     } else {
         noResults.style.display = "none";
@@ -262,3 +268,79 @@ function searchData() {
         }, 100);
     }
 }
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchData();
+    }
+});
+document.getElementById("searchInput").addEventListener("input", function () {
+    if (this.value.trim() === "") {
+        searchData();
+		 window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+});
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", function() {
+
+    let value = this.value.toLowerCase().trim();
+
+    let suggestions =
+        document.getElementById("searchSuggestions");
+
+    suggestions.innerHTML = "";
+
+    if (value === "") {
+        suggestions.style.display = "none";
+        return;
+    }
+
+    let products = document.querySelectorAll(
+        ".product-box, .brownie-card, .special-box"
+    );
+
+    let matches = [];
+
+   products.forEach(product => {
+
+    let nameElement = product.querySelector("h3");
+
+    if (nameElement) {
+
+        let name = nameElement.innerText;
+
+        if (
+            name.toLowerCase().includes(value) &&
+            !matches.includes(name)
+        ) {
+            matches.push(name);
+        }
+    }
+});
+
+    matches.slice(0, 8).forEach(match => {
+
+        let div = document.createElement("div");
+
+        div.textContent = match;
+
+        div.onclick = function() {
+
+            searchInput.value = match;
+
+            suggestions.style.display = "none";
+
+            searchData();
+        };
+
+        suggestions.appendChild(div);
+    });
+
+    suggestions.style.display =
+        matches.length ? "block" : "none";
+});

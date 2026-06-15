@@ -134,7 +134,7 @@ function searchData() {
         .trim();
 
     let items = document.querySelectorAll(
-        ".product-box, .brownie-card"
+        ".product-box, .brownie-card, .special-box"
     );
 
     items.forEach(item => {
@@ -185,7 +185,7 @@ function searchData() {
         .trim();
 
     let items = document.querySelectorAll(
-        ".product-box, .brownie-card"
+        ".product-box, .brownie-card, .special-box"
     );
 
     let found = false;
@@ -220,7 +220,7 @@ function searchData() {
         .trim();
 
     let items = document.querySelectorAll(
-        ".product-box, .brownie-card"
+        ".product-box, .brownie-card, .special-box"
     );
 
     let found = false;

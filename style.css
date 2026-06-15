@@ -37,8 +37,8 @@ header {
 
 
 .logo-img {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%; 
     object-fit: cover;
 }
@@ -773,8 +773,9 @@ section {
 }
 
 .brand-title {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
+  white-space: nowrap;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
   color: #3b2f2f;
@@ -1069,11 +1070,10 @@ section:not(#contact) {
         text-align: center;
     }
 
-    nav ul {
+   nav ul {
     list-style: none;
     display: flex;
-    align-items: center;
-    gap: 25px;
+    gap: 15px;
     margin: 0;
     padding: 0;
 }
@@ -1140,7 +1140,8 @@ section:not(#contact) {
 .search-container {
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 15px;
+	flex-shrink: 1;
 }
 
 .search-container input {
@@ -1152,7 +1153,7 @@ section:not(#contact) {
     background: #fff7f0;
     color: #4a3f35;
     font-size: 15px;
-    width: 220px;
+    width: 180px;
 }
 
 .search-container input:focus {
@@ -1241,7 +1242,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #noResultsMessage {

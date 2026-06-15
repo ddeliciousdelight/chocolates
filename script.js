@@ -211,6 +211,8 @@ function searchData() {
         noResults.style.display = "none";
     }
 }
+
+//search input naviagting to the screen 
 function searchData() {
 
     let input = document.getElementById("searchInput")

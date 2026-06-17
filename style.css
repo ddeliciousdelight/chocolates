@@ -1067,11 +1067,14 @@ section:not(#contact) {
 @media (max-width: 768px) {
 
     /* Header */
-    header {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
+    header{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:10px 15px;
+	gap:10px; 
+}
 
    nav ul {
     list-style: none;
@@ -1569,6 +1572,20 @@ nav ul{
     transform:translateX(-50%);
 }
 
+.brand-title{
+    font-size:18px;
+}
+
+.logo-img{
+    width:60px;
+    height:60px;
+}
+
+.menu-toggle{
+    display:block;
+    margin-left:auto;
+}
+
 }
 
 @media(max-width:768px){
@@ -1605,6 +1622,7 @@ nav ul{
 
     .menu-toggle{
         display:block;
+		margine-left:auto;
     }
 
     nav{

@@ -323,7 +323,7 @@ searchInput.addEventListener("input", function() {
     }
 });
 
-    matches.slice(0, 8).forEach(match => {
+    matches.slice(0, 10).forEach(match => {
 
         let div = document.createElement("div");
 
@@ -344,3 +344,15 @@ searchInput.addEventListener("input", function() {
     suggestions.style.display =
         matches.length ? "block" : "none";
 });
+
+const menuBtn =
+document.getElementById("mobile-menu");
+
+const navMenu =
+document.querySelector("nav ul");
+
+if(menuBtn && navMenu){
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+}

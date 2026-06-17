@@ -1637,3 +1637,64 @@ nav ul{
     }
 
 }
+
+@media (max-width:768px){
+
+    .hero-content{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .hero-products{
+        width:100%;
+        height:300px;
+        position:relative;
+        margin-top:20px;
+        overflow:hidden;
+    }
+
+    .float3d{
+        width:85px;
+        height:85px;
+    }
+
+    .img1{
+        top:20px;
+        left:15px;
+    }
+
+    .img2{
+        top:20px;
+        right:15px;
+        left:auto;
+    }
+
+    .img3{
+        top:110px;
+        left:20px;
+    }
+
+    .img4{
+        top:110px;
+        right:20px;
+        left:auto;
+    }
+
+    .img5{
+        top:10px;
+        left:50%;
+        transform:translateX(-50%) rotate(4deg);
+    }
+
+    .img6{
+        top:105px;
+        left:50%;
+        transform:translateX(-50%) scale(1.05);
+    }
+
+    .img7{
+        top:200px;
+        left:50%;
+        transform:translateX(-50%) scale(1);
+    }
+}

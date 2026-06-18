@@ -345,6 +345,8 @@ searchInput.addEventListener("input", function() {
         matches.length ? "block" : "none";
 });
 
+// hamburger menu for mobile view 
+
 const menuBtn =
 document.getElementById("mobile-menu");
 
@@ -356,3 +358,19 @@ if(menuBtn && navMenu){
         navMenu.classList.toggle("active");
     });
 }
+
+document.querySelectorAll('.dropdown > a').forEach(item => {
+
+    item.addEventListener('click', function(e){
+
+        if(window.innerWidth <= 768){
+
+            e.preventDefault();
+
+            this.parentElement.classList.toggle('active');
+
+        }
+
+    });
+
+});

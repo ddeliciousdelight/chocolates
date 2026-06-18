@@ -1485,7 +1485,7 @@ nav ul li a{
     padding-left:20px;
 }
 
-.dropdown.active .dropdown-menu{
+.dropdown.active > .dropdown-menu{
     display:block !important;
 }
 

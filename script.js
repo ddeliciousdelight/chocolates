@@ -359,15 +359,16 @@ if(menuBtn && navMenu){
     });
 }
 
-document.querySelectorAll('.dropdown > a').forEach(item => {
+document.querySelectorAll('.dropdown').forEach(dropdown => {
 
-    item.addEventListener('click', function(e){
+    dropdown.addEventListener('click', function(e){
 
         if(window.innerWidth <= 768){
 
             e.preventDefault();
+            e.stopPropagation();
 
-            this.parentElement.classList.toggle('active');
+            this.classList.toggle('active');
 
         }
 

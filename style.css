@@ -1405,6 +1405,7 @@ header{
     overflow:hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
+	display: none;
 }
 
 
@@ -1412,7 +1413,7 @@ header{
 
 .search-wrapper{
     flex:1;
-    margin:0 8px;
+    margin:0 10px;
 }
 
 .search-container{
@@ -1496,13 +1497,18 @@ nav ul li a{
 /* HERO */
 
 .hero{
-    padding:40px 15px;
+     padding-top:30px;
+    padding-bottom:30px;
 }
 
 .hero-content{
     flex-direction:column;
-    text-align:center;
+    align-items:center;
     gap:20px;
+	display: flex;
+}
+.hero-text{
+    width:100%;
 }
 
 .hero-text h1{
@@ -1517,6 +1523,8 @@ nav ul li a{
 
 .hero-products{
     display:none;
+	width:100%;
+    margin-top:20px;
 }
 
 /* FEATURES */

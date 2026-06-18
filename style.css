@@ -1486,7 +1486,7 @@ nav ul li a{
 }
 
 .dropdown.active .dropdown-menu{
-    display:block;
+    display:block !important;
 }
 
 .dropdown-menu li{
@@ -1523,9 +1523,11 @@ nav ul li a{
 }
 
 .hero-products{
-    display:none;
+    display:block;
 	width:100%;
     margin-top:20px;
+	  position:relative !important;
+    transform:none !important;
 }
 .hero-content::before{
     display:none;

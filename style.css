@@ -1061,7 +1061,7 @@ section:not(#contact) {
 nav {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -1076,7 +1076,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 #noResultsMessage {
@@ -1377,6 +1377,7 @@ header{
     background:#f8f8f8;
     padding:10px 12px;
     display:flex;
+	flex-wrap:nowrap; 
     align-items:center;
     justify-content:space-between;
     z-index:99999;
@@ -1386,58 +1387,56 @@ header{
 /* LOGO */
 
 .logo{
+    flex:0 0 auto;
     display:flex;
     align-items:center;
-    gap:8px;
-    flex:1;
-    min-width:0;
+    gap:5px;
 }
 
 .logo-img{
-    width:50px;
-    height:50px;
-    border-radius:50%;
+    width:45px;
+    height:45px;
 }
 
+
 .brand-title{
-    font-size:15px;
-    font-weight:700;
-    white-space:nowrap;
+    font-size:13px;
+    max-width:90px;
     overflow:hidden;
+    white-space:nowrap;
     text-overflow:ellipsis;
 }
+
 
 /* SEARCH */
 
 .search-wrapper{
-    margin:0;
-    flex-shrink:0;
+    flex:1;
+    margin:0 8px;
 }
 
 .search-container{
-    margin:0;
+    width:100%;
 }
 
 .search-container input{
-    width:120px;
-    height:42px;
-    font-size:14px;
+    width:100%;
+    height:38px;
 }
 
 .search-container button{
-    height:42px;
-    width:48px;
+    width:42px;
+    height:38px;
 }
 
 /* HAMBURGER */
 
 .menu-toggle{
-    display:block;
-    font-size:28px;
-    margin-left:10px;
-    color:#5C3317;
+    display:block !important;
+    font-size:30px;
     cursor:pointer;
-    flex-shrink:0;
+    color:#5C3317;
+    margin-left:5px;
 }
 
 /* NAV */
@@ -1447,27 +1446,26 @@ nav{
 }
 
 nav ul{
-    display:none;
-    flex-direction:column;
+    display:none !important;
     position:fixed;
     top:80px;
     left:0;
     width:100%;
     background:#fff7f0;
+    flex-direction:column;
     padding:0;
     margin:0;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
     z-index:99998;
 }
 
 nav ul.active{
-    display:flex;
+    display:flex !important;
 }
 
 nav ul li{
     width:100%;
     padding:15px 20px;
-    border-bottom:1px solid rgba(0,0,0,.08);
+    border-bottom:1px solid #ddd;
 }
 
 nav ul li a{

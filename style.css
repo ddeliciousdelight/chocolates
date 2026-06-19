@@ -1428,7 +1428,7 @@ header{
 
 .search-container button{
     width:42px;
-    height:38px;
+    height:48px;
 }
 
 /* HAMBURGER */
@@ -1559,33 +1559,33 @@ nav ul li a{
 /* TOP ROW */
 .img1{
     top: 10px;
-    left: 20px;
+    left: 10px;
 }
 
 .img2{
     top: 20px;
-    left: 125px;
+    left: 110px;
 }
 
 .img3{
-    top: 10px;
-    left: 230px;
+    top: 14px;
+    left: 200px;
 }
 
 /* MIDDLE ROW */
 .img4{
     top: 120px;
-    left: 10px;
+    left: 09px;
 }
 
 .img5{
     top: 130px;
-    left: 130px;
+    left: 100px;
 }
 
 .img6{
     top: 120px;
-    left: 245px;
+    left: 198px;
 }
 
 /* BOTTOM CENTER */

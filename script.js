@@ -359,15 +359,27 @@ if(menuBtn && navMenu){
     });
 }
 
-document.querySelectorAll('.dropdown > a').forEach(link => {
+document.querySelectorAll('nav ul li a').forEach(link => {
 
     link.addEventListener('click', function(e){
 
         if(window.innerWidth <= 768){
 
-            e.preventDefault();
+            // If clicked is PRODUCTS main button
+            if(this.parentElement.classList.contains('dropdown')){
 
-            this.parentElement.classList.toggle('active');
+                // only toggle dropdown, DON'T close menu
+                e.preventDefault();
+                this.parentElement.classList.toggle('active');
+                return;
+
+            }
+
+            // If clicked is inside dropdown (Chocolates / Brownies)
+            document.querySelector('nav ul').classList.remove('active');
+
+            document.querySelectorAll('.dropdown')
+            .forEach(item => item.classList.remove('active'));
 
         }
 

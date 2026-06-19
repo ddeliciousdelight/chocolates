@@ -1414,17 +1414,15 @@ header{
 
 .search-wrapper{
     flex:1;
-    margin:0 5px 0 -10px;
+    margin:0 4px;
 }
 
 .search-container{
-    width:100%;
 	margin-left:-8px;
 }
 
 .search-container input{
-    width:100%;
-    height:38px;
+    width:120px;
 	font-size:14px;
 }
 
@@ -1526,16 +1524,23 @@ nav ul li a{
 }
 
 .hero-products{
-    display:block;
-	width:100%;
-	height: 450px;
-    margin-top:20px;
-	  position:relative !important;
-    transform:none !important;
-	overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: 380px;
+    margin: 20px auto;
+    overflow: visible;
 }
-.hero-content::before{
-    display:none;
+
+  .hero-content::before{
+    display:block !important;
+    width:320px;
+    height:320px;
+    top:120px;
+    right:50%;
+    transform:translateX(50%);
+    opacity:0.25;
+
 }
 
 /* FEATURES */
@@ -1544,56 +1549,50 @@ nav ul li a{
     grid-template-columns:1fr;
 }
 
-/* Smaller images */
+/* Smaller cards */
 .float3d{
-    position:static !important;
-    width:120px;
-    height:120px;
-    transform:none !important;
+    width: 95px;
+    height: 95px;
+    border-radius: 15px;
 }
 
-/* Reposition images */
+/* TOP ROW */
 .img1{
-    top:20px;
-    left:10%;
+    top: 10px;
+    left: 20px;
 }
 
 .img2{
-    top:20px;
-    right:10%;
-    left:auto;
+    top: 20px;
+    left: 125px;
 }
 
 .img3{
-    top:140px;
-    left:5%;
+    top: 10px;
+    left: 230px;
 }
 
+/* MIDDLE ROW */
 .img4{
-    top:140px;
-    right:5%;
-    left:auto;
+    top: 120px;
+    left: 10px;
 }
 
 .img5{
-    top:50px;
-    left:50%;
-    transform:translateX(-50%) rotate(4deg);
+    top: 130px;
+    left: 130px;
 }
 
 .img6{
-    top:180px;
-    left:50%;
-    transform:translateX(-50%) rotate(-4deg);
-    z-index:5;
+    top: 120px;
+    left: 245px;
 }
 
+/* BOTTOM CENTER */
 .img7{
-    top:310px;
-    left:50%;
-    transform:translateX(-50%) rotate(5deg);
+    top: 245px;
+    left: 125px;
 }
-
 /* PRODUCTS */
 
 .products-container{

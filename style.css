@@ -266,8 +266,8 @@ section {
 }
 
 .special-products img {
-  width: 90%;
-  height: auto;
+  width: 100%;
+  height: 290px;
   border-radius: 10px;
 }
 

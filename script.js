@@ -359,6 +359,7 @@ if(menuBtn && navMenu){
     });
 }
 
+//navigating the section upon clicking 3lines.
 document.querySelectorAll('nav ul li a').forEach(link => {
 
     link.addEventListener('click', function(e){
@@ -384,5 +385,30 @@ document.querySelectorAll('nav ul li a').forEach(link => {
         }
 
     });
+
+});
+
+//up on clicking the arrow button in about us section.
+document.addEventListener("DOMContentLoaded", function () {
+
+    const arrow = document.querySelector(".about-arrow");
+
+    if (arrow) {
+
+        arrow.addEventListener("click", function () {
+
+            const target = document.querySelector("#team-section"); 
+            // change this ID if your founder section has different ID
+
+            if (target) {
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+
+        });
+
+    }
 
 });
